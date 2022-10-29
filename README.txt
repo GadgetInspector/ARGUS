@@ -1,1 +1,0 @@
-A sample output to test the visualisations is provided in the directory /output/, based on the same data that are discussed in chapter 7 of the minor thesis. 
