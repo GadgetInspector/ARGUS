@@ -1,0 +1,42 @@
+
+<html>
+<head>
+    <script type="text/javascript" src="https://unpkg.com/moment@latest"></script>
+    <script type="text/javascript" src="https://unpkg.com/vis-data@latest/peer/umd/vis-data.min.js"></script>
+    <script type="text/javascript" src="https://unpkg.com/vis-timeline@latest/peer/umd/vis-timeline-graph2d.min.js"></script>
+    <script src="https://www.openlayers.org/api/OpenLayers.js"></script>
+    <link rel="stylesheet" type="text/css" href="https://unpkg.com/vis-timeline@latest/styles/vis-timeline-graph2d.min.css" />
+    <link rel="stylesheet" type="text/css" href="style.css" />
+    <script type="text/javascript" src="globals.js"></script>
+    <script type="text/javascript" src="data/backlight.js"></script>
+    <script type="text/javascript" src="data/appinFocus.js"></script>
+    <script type="text/javascript" src="data/appUsage.js"></script>
+    <script type="text/javascript" src="data/pluggedIn.js"></script>
+    <script type="text/javascript" src="data/audioOutput.js"></script>
+    <script type="text/javascript" src="data/appActivity.js"></script>
+    <script type="text/javascript" src="data/routinedloc.js"></script>
+    <script type="text/javascript" src="data/health_stepsdistance.js"></script>
+</head>
+
+<body>
+    <div id="header">ARGUS (Apple Reconnaissance Graphical Unification System)</div>
+    <br />
+    <div id="timeframe">Showing data from <span id="start"></span> to <span id="end"></span></div>
+
+    <div id="timeline"></div>
+    <div id="details"></div>
+    <table id="combo">
+        <tr>
+            <td id="comboLeft"><div id="map"></div></td>
+            <td id="comboRight"><div id="health"></div></td>
+        </tr>
+    </table>
+ <script type="text/javascript" src="argus.js"></script>
+</body>
+
+</html>
+
+
+
+
+

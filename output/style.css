@@ -1,0 +1,89 @@
+body {
+    font-family:Arial, Helvetica;
+}
+
+#header {
+
+    font-size:18px;
+}
+
+#timeframe {
+
+    font-size:12px;
+}
+
+#timeline {
+    width: 100%;
+    height: auto;
+    font-size:10pt;
+    box-sizing: border-box;
+    border: 1px solid black;
+}
+
+#map {
+    width:100%;
+    height:400px;
+    border: 1px solid black
+}
+#details {
+    border: 1px solid black;
+    margin-top: 1px;
+    margin-bottom: 1px;
+    padding: 5px;
+}
+#combo {
+    width:100%;
+}
+
+#comboLeft {
+    width:40%;
+}
+
+#comboRight {
+    width:60%;
+}
+
+#health {
+    font-family: Arial, Helvetica;
+    width: 100%;
+    height: 400px;
+    font-size:10pt;;
+    border: 1px solid black;
+}
+
+
+.vis-item .vis-item-overflow {
+    overflow: hidden;
+    height: 40px;
+    padding-top:10px;
+    margin: 0;
+    display: inline-block;
+    position: absolute;
+    border: None;
+    z-index:1;
+    position: relative;
+    width: 100%;
+}
+
+.vis-item-content{
+    vertical-align: middle;
+}
+.vis-box {
+    height: 40px;
+    border: 1px solid #404040;
+}
+.vis-item {
+    border:None;
+}
+
+.vis-item.vis-box{
+    border: 1px solid #404040;
+    padding-top:10px;
+}
+
+div.vis-tooltip {
+    background-color:#fff;
+}
+.vis-range {
+    border: None !important;
+}
