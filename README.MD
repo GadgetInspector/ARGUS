@@ -22,13 +22,16 @@ Feel free to contact me with things you need, want to see improved, hate,... I'm
 
 ## Usage
 
-argus.py [-h] --start START --end END --gmtoffset GMTOFFSET -d DATABASE
+`argus.py [-h] --start START --end END --gmtoffset GMTOFFSET -d DATABASE`
+
+Shows forensics activity data from 18:00 to 19:00 on October 25, 2022. Open argus_output.html in the output directory to see the results. 
+`start` and `end` are to be specified in UTC time. The parameter `gmtoffset` reflects the time difference from UTC including correction for daylight savings time. When the timezone is UTC+1 (Amsterdam, Paris, Berlin) in June, `gmtoffset` should be set to `2`, in December to `1`. This is currently relevant for location and health data, as other activity data has timezone information associated to them in the source database. 
 
 ## Example
 
 `argus.py --start "2022-10-25 18:00:00" --end "2022-10-25 19:00:00" --gmtoffset 2 -d apollo.db`
 
-Shows forensics activity data from 18:00 to 19:00 on October 25, 2022. Open argus_output.html in the output directory to see the results. 
+
 
 
 ## TO DO
