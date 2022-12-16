@@ -38,6 +38,7 @@ Shows forensics activity data from 18:00 to 19:00 on October 25, 2022. Open argu
 - Include more data types 
 - Include more health data
 - Include more location types (Cloud-V2.sqlite etc)
+- Include timestamps and files of .ktx files to show display content in timeline
 - Options to show/hide data types
 - Show more metadata from App Activities/Intents
 - Decode some plist data to get even more meta data
