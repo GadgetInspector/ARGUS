@@ -13,6 +13,8 @@ Currently processed data types:
 - App Usage
 - App Activity/Intent
 - Audio Output
+- Recent Locations (precise, including speed and direction)
+- Visited Locations (rough location over a period of time)
 - Display Backlight Status
 - Plugged In State
 - Steps Taken
