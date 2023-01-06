@@ -16,6 +16,9 @@ def create(fromTimestamp, toTimestamp, gmtOffset, database, group, locid):
     # Prepare variables for iterating
     ident = locid
     output = ''
+
+    colors = ['#8b68c4', '#70966c', '#d63894', '#2b53ab', '#cccc54', '#d95050']
+    placeDict = {}
     # iterate over all returned rows
     print("Parsing routined visit data... ")
     for event in routinedvisit:
@@ -40,32 +43,36 @@ def create(fromTimestamp, toTimestamp, gmtOffset, database, group, locid):
         if eventData["UNCERTAINTY"]:
             uncertainty = eventData["UNCERTAINTY"]
             if uncertainty < 25:
-                color = "#4F674A"
+                textcolor = "#4F674A"
             if uncertainty < 50 and uncertainty >= 25:
-                color = "#7CA577"
+                textcolor = "#7CA577"
             if uncertainty < 100 and uncertainty >= 50:
-                color = "#E9DF40"
+                textcolor = "#E9DF40"
             if uncertainty < 250 and uncertainty >= 100:
-                color = "#EFD75D"
+                textcolor = "#EFD75D"
             if uncertainty < 500 and uncertainty >= 250:
-                color = "#EAA125"
+                textcolor = "#EAA125"
             if uncertainty < 1000 and uncertainty >= 500:
-                color = "#F3A742"
+                textcolor = "#F3A742"
             if uncertainty < 1500 and uncertainty >= 1000:
-                color = "#F36442"
+                textcolor = "#F36442"
             if uncertainty >= 1500:
-                color = "F6876C"
+                textcolor = "F6876C"
         if eventData["DEVICE CLASS"]:
             deviceclass = eventData["DEVICE CLASS"]
         if eventData["DEVICE MODEL"]:
             devicemodel = eventData["DEVICE MODEL"]
 
+        if placeid not in placeDict.keys():
+            placeDict[placeid] = colors[ident % len(colors) - 1]  # Assign color to a place the first time it occurs
+
+        color = placeDict[placeid]
         content= ""
         title = "<b>Routined Visit Location</b>" \
                 "<br />{0}, {1}<br />{2} - {3}<br />" \
-                "Uncertainty: {4}<br /> Device Class:{5}, Device Model: {6} <br />" \
-                "Place ID: {7}" \
-                .format(lat, lon, startString, endString, uncertainty, deviceclass, devicemodel, placeid)
+                "<span style=\"color:{4}\">Uncertainty: {5}</span><br /> Device Class:{6}, Device Model: {7} <br />" \
+                "Place ID: {8}" \
+                .format(lat, lon, startString, endString, textcolor, uncertainty, deviceclass, devicemodel, placeid)
 
         output += "{" +\
                   "id: {0}, " \
@@ -77,7 +84,8 @@ def create(fromTimestamp, toTimestamp, gmtOffset, database, group, locid):
                   "title: '{5}' ," \
                   "lat: {6}, " \
                   "lon: {7}, " \
-                  .format(ident, startString, endString, group, content, title, lat, lon) \
+                  "style: \"background-color:{8}\"" \
+                      .format(ident, startString, endString, group, content, title, lat, lon, color) \
                   + "},\n"
 
     routinedvisitFile.write(output[:-2] + "]")
