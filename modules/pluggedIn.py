@@ -1,4 +1,6 @@
 import sqlite3, json, datetime
+
+
 def create(fromTimestamp, toTimestamp, database, group):
     backlightFile = open('output/data/pluggedIn.js', 'w')
     backlightFile.write('var pluggedInData = [')

@@ -34,7 +34,8 @@ groups.add({id: 2, content: 'App Usage'});
 groups.add({id: 3, content: 'Audio Output'});
 groups.add({id: 4, content: 'Plugged In'});
 groups.add({id: 5, content: 'Routined Locations'});
-groups.add({id: 6, content: 'App Activity'});
+groups.add({id: 6, content: 'Routined Visits'});
+groups.add({id: 7, content: 'App Activity'});
 var items = new vis.DataSet();
 items.add(appfocusData);
 items.add(backlightData);
@@ -43,6 +44,7 @@ items.add(appactivityData);
 items.add(pluggedInData);
 items.add(appUsageData);
 items.add(routinedlocData);
+items.add(routinedvisitData);
 var healthItems = new vis.DataSet(stepsdistance)
 
 // Configuration for the Timeline

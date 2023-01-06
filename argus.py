@@ -7,7 +7,8 @@ from modules import audioOutput, \
     healthData, \
     pluggedIn, \
     appUsage, \
-    routinedloc
+    routinedloc, \
+    routinedvisit
 
 if __name__ == '__main__':
     version ='1.0b0'
@@ -88,9 +89,9 @@ if __name__ == '__main__':
     appUsage.create(start, end, database, 2)
     audioOutput.create(start, end, database, 3)
     pluggedIn.create(start, end, database, 4)
-    routinedloc.create(start, end, gmtOffset, database, 5)
-
-    appActivity.create(start, end, database, 6)
+    locid = routinedloc.create(start, end, gmtOffset, database, 5)
+    routinedvisit.create(start, end, gmtOffset, database, 6, locid)
+    appActivity.create(start, end, database, 7)
     healthData.create(start, end, gmtOffset, database)
 
     offsetstart = start + gmtOffset
